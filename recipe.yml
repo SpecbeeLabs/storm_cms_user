@@ -20,10 +20,7 @@ config:
       grantPermissions:
         - "access content"
         - "access user profiles"
-        - "bypass honeypot protection"
         - "change own username"
-        - "use text format basic_html"
-        - "view media"
     user.role.content_editor:
       ensure_exists:
         id: content_editor
