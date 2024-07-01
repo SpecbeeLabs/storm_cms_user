@@ -5,3 +5,65 @@ recipes:
 install:
   - flood_control
   - password_policy
+  - password_policy_length
+  - password_policy_username
+config:
+  import:
+    flood_control: "*"
+  actions:
+    user.role.anonymous:
+      grantPermissions:
+        - "access content"
+        - "access user profiles"
+        - "view media"
+    user.role.authenticated:
+      grantPermissions:
+        - "access content"
+        - "access user profiles"
+        - "bypass honeypot protection"
+        - "change own username"
+        - "use text format basic_html"
+        - "view media"
+    user.role.content_editor:
+      ensure_exists:
+        id: content_editor
+      grantPermissions:
+        - "access administration pages"
+        - "access announcements"
+        - "access content overview"
+        - "access contextual links"
+        - "access files overview"
+        - "access help pages"
+        - "access media overview"
+        - "access navigation"
+        - "access responsive preview"
+        - "access site in maintenance mode"
+        - "access toolbar"
+        - "access user profiles"
+        - "administer blocks"
+        - "administer menu"
+        - "administer nodes"
+        - "bypass honeypot protection"
+        - "bypass node access"
+        - "change own username"
+        - "create media"
+        - "delete all revisions"
+        - "delete any file"
+        - "delete any media"
+        - "delete media"
+        - "delete own files"
+        - "mark as hidden in editoria11y"
+        - "mark as ok in editoria11y"
+        - "revert all revisions"
+        - "run cron jobs"
+        - "update any media"
+        - "update media"
+        - "use text format rich_text"
+        - "view all media revisions"
+        - "view all revisions"
+        - "view cron jobs"
+        - "view editoria11y checker"
+        - "view own unpublished content"
+        - "view own unpublished media"
+        - "view the administration theme"
+        - "view user email addresses"
