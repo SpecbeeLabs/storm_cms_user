@@ -2,6 +2,7 @@ name: Storm CMS User
 description: Defines the user configurations, roles & permissions.
 recipes:
   - core/recipes/content_editor_role
+  - core/recipes/user_picture
 install:
   - flood_control
   - password_policy
