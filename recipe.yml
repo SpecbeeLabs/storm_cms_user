@@ -27,7 +27,6 @@ config:
         id: content_editor
       grantPermissions:
         - "access administration pages"
-        - "access announcements"
         - "access content overview"
         - "access contextual links"
         - "access files overview"
@@ -36,7 +35,6 @@ config:
         - "access navigation"
         - "access responsive preview"
         - "access site in maintenance mode"
-        - "access toolbar"
         - "access user profiles"
         - "administer blocks"
         - "administer menu"
