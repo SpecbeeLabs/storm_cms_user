@@ -1,8 +1,5 @@
 name: Storm CMS User
 description: Defines the user configurations, roles & permissions.
-recipes:
-  - core/recipes/content_editor_role
-  - core/recipes/user_picture
 install:
   - flood_control
   - password_policy
@@ -23,8 +20,13 @@ config:
         - "access user profiles"
         - "change own username"
     user.role.content_editor:
+      # If this role already exists, then this action has no effect. If it doesn't exist, we'll create it with the following values.
       ensure_exists:
         id: content_editor
+        label: 'Content editor'
+        weight: 2
+        is_admin: false
+        permissions:
       grantPermissions:
         - "access administration pages"
         - "access content overview"
@@ -63,3 +65,13 @@ config:
         - "view own unpublished media"
         - "view the administration theme"
         - "view user email addresses"
+    user.role.site_maintainer:
+      # If this role already exists, then this action has no effect. If it doesn't exist, we'll create it with the following values.
+      ensure_exists:
+        id: site_maintainer
+        label: 'Site Maintainer'
+        weight: 3
+        is_admin: false
+        permissions:
+          - 'access administration pages'
+          - 'view own unpublished content'
