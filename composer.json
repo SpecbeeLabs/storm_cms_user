@@ -10,6 +10,7 @@
     ],
     "require": {
         "drupal/flood_control": "^2.3",
-        "drupal/password_policy": "^4.0"
+        "drupal/password_policy": "^4.0",
+        "drupal/dashboard": "2.x-dev@dev"
     }
 }
