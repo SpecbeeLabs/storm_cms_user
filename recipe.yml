@@ -1,5 +1,8 @@
 name: Storm CMS User
 description: Defines the user configurations, roles & permissions.
+recipes:
+  - core/recipes/content_editor_role
+  - core/recipes/user_picture
 install:
   - flood_control
   - password_policy
@@ -20,25 +23,19 @@ config:
         - "access user profiles"
         - "change own username"
     user.role.content_editor:
-      # If this role already exists, then this action has no effect. If it doesn't exist, we'll create it with the following values.
-      ensure_exists:
-        id: content_editor
-        label: 'Content editor'
-        weight: 2
-        is_admin: false
       grantPermissionsForEachMediaType:
-        - 'create %bundle media'
-        - 'delete any %bundle media'
-        - 'edit any %bundle media'
+        - "create %bundle media"
+        - "delete any %bundle media"
+        - "edit any %bundle media"
       grantPermissionsForEachNodeType:
-        - 'clone %bundle content'
-        - 'create %bundle content'
-        - 'delete %bundle revisions'
-        - 'delete any %bundle content'
-        - 'edit any %bundle content'
+        - "clone %bundle content"
+        - "create %bundle content"
+        - "delete %bundle revisions"
+        - "delete any %bundle content"
+        - "edit any %bundle content"
       grantPermissionsForEachTaxonomyVocabulary:
-        - 'create terms in %bundle'
-        - 'edit terms in %bundle'
+        - "create terms in %bundle"
+        - "edit terms in %bundle"
       grantPermissions:
         - "access administration pages"
         - "access content overview"
@@ -66,9 +63,9 @@ config:
         - "view the administration theme"
     user.role.site_maintainer:
       # If this role already exists, then this action has no effect. If it doesn't exist, we'll create it with the following values.
-      ensure_exists:
+      createIfNotExists:
         id: site_maintainer
-        label: 'Site Maintainer'
+        label: "Site Maintainer"
         weight: 3
         is_admin: false
         permissions:
