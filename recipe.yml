@@ -25,13 +25,10 @@ config:
     user.role.content_editor:
       grantPermissionsForEachMediaType:
         - "create %bundle media"
-        - "delete any %bundle media"
         - "edit any %bundle media"
       grantPermissionsForEachNodeType:
         - "clone %bundle content"
         - "create %bundle content"
-        - "delete %bundle revisions"
-        - "delete any %bundle content"
         - "edit any %bundle content"
       grantPermissionsForEachTaxonomyVocabulary:
         - "create terms in %bundle"
@@ -84,6 +81,7 @@ config:
           - "administer nodes"
           - "bypass honeypot protection"
           - "bypass node access"
+          - "bypass advanced aggregation"
           - "change own username"
           - "mark as hidden in editoria11y"
           - "mark as ok in editoria11y"
